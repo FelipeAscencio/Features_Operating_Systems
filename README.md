@@ -1,2 +1,11 @@
 # Features_Operating_Systems
-Implementation of some functionalities of Unix Like "Operating Systems".
+
+In this project, 3 fundamental features of "Operating Systems" were implemented, following a "Unix Like" format.
+
+## Features
+
+- Shell.
+
+- Scheduler.
+
+- File System.
