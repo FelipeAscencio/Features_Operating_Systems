@@ -1,11 +1,13 @@
-# Features_Operating_Systems
+# Features Operating Systems
 
-In this project, 3 fundamental features of "Operating Systems" were implemented, following a "Unix Like" format.
+This project implements three fundamental features of an Operating System, following a 'Unix-like' design approach.
+
+All the projects were developed in the programming languages 'C' and 'Assembly x86'.
 
 ## Features
 
-- Shell.
+- Shell – Provides a command-line interface for user interaction with the system.
 
-- Scheduler.
+- Scheduler – Manages process execution and allocates CPU resources efficiently.
 
-- File System.
+- File System – Handles file storage, retrieval, and organization.

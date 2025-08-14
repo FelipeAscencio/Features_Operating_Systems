@@ -1,10 +1,8 @@
-# shell
-
----
+# Respuestas Teóricas - Shell
 
 ## Búsqueda en $PATH
 
-### ¿cuáles son las diferencias entre la syscall execve(2) y la familia de wrappers proporcionados por la librería estándar de C (libc) exec(3)?.
+### ¿Cuáles son las diferencias entre la syscall execve(2) y la familia de wrappers proporcionados por la librería estándar de C (libc) exec(3)?.
 
 execve() ejecuta el programa al que hace referencia el nombre de pathname, con los argumentos que se le envían por argv[].
 
@@ -38,8 +36,6 @@ a shell podría continuar buscando en otras rutas de PATH antes de retornar el e
 - Si no logra reconocer el encabezado del archivo indicado (Error ENOEXEC), las funciones se ejecutaran en la shell con la ruta del archivo posicionandolo como primer argumento.
     - Si esto llegase a fallar tambien, no se realizarian mas busquedas.
 
----
-
 ## Procesos en segundo plano
 
 ### Explicar detalladamente el mecanismo completo utilizado. ¿Por qué es necesario el uso de señales? (Items 4 a 6).
@@ -67,8 +63,6 @@ Esto requiere una correcta gestión de señales y grupos de procesos, especialme
 - Liberar los recursos de los procesos terminados.
 - Mantener la interactividad de la shell, permitiendo que el usuario siga ejecutando comandos sin necesidad de esperar la finalización de procesos en segundo plano.
 - Evitar la acumulación de procesos zombis, lo que es crucial para mantener el rendimiento del sistema.
-
----
 
 ## Flujo estándar
 
@@ -102,8 +96,6 @@ Se redirige la salida estándar (`stdout`) a la salida de errores (`stderr`), pe
 
 - En el primer caso (`2>&1`), tanto la salida estándar como los errores se almacenan en el archivo.
 - En el segundo caso (`1>&2`), la salida estándar se redirige a los errores, y no se almacena en el archivo, dejando el archivo vacío. Los errores siguen apareciendo en pantalla.
-
----
 
 ## Tuberías múltiples
 
@@ -139,8 +131,6 @@ $ echo $?
 
 El comando `ls /...`falla porque el directorio no existe. Sin embargo, como `grep "test"` no falló , el **código de salida reportado es `0`**, indicando éxito, ya que el último comando en la tubería se ejecutó sin errores.
 
----
-
 ## Variables de entorno temporarias
 
 ### ¿Por qué es necesario hacerlo luego de la llamada a fork(2)?.
@@ -158,8 +148,6 @@ Manual de linux sobre _setenv(3)_: “_The setenv() function adds the variable n
 ### Describir brevemente (sin implementar) una posible implementación para que el comportamiento sea el mismo.
 
 Una forma de resolver esto y que el comportamiento sea el mismo, es agregar al array de _chars_ _envp_ todas las variables del entorno del proceso actual, además de las nuevas variables que se le quieren pasar al nuevo proceso que se va a ejecutar. Las variables son de la forma “key=value”, y el array debe finalizar con un puntero a NULL. De esta forma, el nuevo proceso tendrá todas las variables del entorno del proceso actual, sumadas a las nuevas. Luego de esto, llamar alguna de las funciones _execvpe()_ o _execle()_ pasando como argumento _envp_ este array con las variables.
-
----
 
 ## Pseudo-variables
 
@@ -183,7 +171,6 @@ Ejemplo de $$:
 
   37111
 
-
 Ejemplo de $0:
 
   $ /bin/bash
@@ -192,7 +179,6 @@ Ejemplo de $0:
 
   /bin/bash
 
-
 Ejemplo de $*:
 
   $ /bin/bash
@@ -200,8 +186,6 @@ Ejemplo de $*:
   $ echo "Uniendo" "estos" "argumentos" "e" "imprimiendo"; $*
 
   Uniendo estos argumentos e imprimiendo.
-
----
 
 ## Comandos built-in
 
@@ -226,5 +210,3 @@ Por otro lado, el comando cd (change directory) *debe ser un built-in* porque su
 En los sistemas basados en Unix, el directorio de trabajo es una propiedad asociada a cada proceso. Si cd se implementara como un comando externo, es decir, en un proceso hijo, este cambio afectaría únicamente al proceso hijo y no tendría ningún efecto en la shell principal. Al finalizar el proceso hijo, este cambio se perdería y la shell volvería a su estado previo sin modificar el directorio de trabajo. 
 
 Esto se debe a que, en Unix, los cambios en el estado de un proceso hijo (como su CWD) no afectan al proceso padre, en este caso, la shell. Por lo tanto, *cd no puede ser implementado como un comando externo* y debe ser un comando built-in para modificar correctamente el entorno de la shell.
-
----

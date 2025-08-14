@@ -1,12 +1,16 @@
-# fisopfs
+# File System
 
-Repositorio para el esqueleto del [TP: filesystem](https://fisop.github.io/website/tps/filesystem) del curso Mendez-Fresia de **Sistemas Operativos (7508) - FIUBA**
+## Introduction
 
-> Sistema de archivos tipo FUSE.
+This project consists of the development of a simplified 'File System' for a Unix-like operating system environment. It was created as a university group assignment by a team of four students, including myself.
+
+The goal was to implement a storage management layer capable of creating, reading, writing, and deleting files while organizing them within a structured directory hierarchy. The system also includes mechanisms for managing file metadata, handling allocation strategies, and ensuring data consistency during file operations.
+
+A clarification: The project was developed for the University, so all analysis, code, and documentation are written in Spanish.
 
 ## Respuestas teóricas
 
-Utilizar el archivo `fisopfs.md` provisto en el repositorio
+Todas las consignas planteadas a la hora del desarrollo del trabajo práctico se encuentran respondidas en el archivo 'file_system.md'.
 
 ## Compilar
 
@@ -76,5 +80,3 @@ Existen tres _targets_ en el archivo `Makefile` para utilizar _docker_.
 ```bash
 $ make format
 ```
-
-Para efectivamente subir los cambios producidos por el `format`, hay que `git add .` y `git commit`.

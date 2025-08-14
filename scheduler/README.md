@@ -1,10 +1,16 @@
-# sched
+# Scheduler
 
-Repositorio para el esqueleto del [TP sched](https://fisop.github.io/website/tps/sched) del curso Mendez-Fresia de **Sistemas Operativos (7508) - FIUBA**
+## Introduction
+
+This project consists of the development of a process scheduler within a Unix-like operating system environment. It was created as a university group assignment by a team of four students, including myself.
+
+The goal was to implement a scheduling mechanism capable of managing multiple processes, allocating CPU time efficiently, and ensuring fairness while maintaining system responsiveness. The scheduler supports different scheduling policies, manages process states, and handles context switching while respecting the constraints of an educational operating system model.
+
+A clarification: The project was developed for the University, so all analysis, code, and documentation are written in Spanish.
 
 ## Respuestas teóricas
 
-Utilizar el archivo `sched.md` provisto en el repositorio
+Todas las consignas planteadas a la hora del desarrollo del trabajo práctico se encuentran respondidas en el archivo 'scheduler.md'.
 
 ## Compilar
 
@@ -53,5 +59,3 @@ El _container_ utiliza [mount volumes](https://docs.docker.com/storage/volumes/)
 ```bash
 $ make format
 ```
-
-Para efectivamente subir los cambios producidos por el `format`, hay que `git add .` y `git commit`.

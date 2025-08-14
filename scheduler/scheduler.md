@@ -1,6 +1,6 @@
-# sched
+# Respuestas Teóricas - Scheduler
 
-## Informe Grupo 1
+## Informe
 
 ### Utilizar GDB para visualizar el cambio de contexto
 

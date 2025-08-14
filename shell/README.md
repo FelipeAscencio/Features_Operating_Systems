@@ -1,10 +1,16 @@
-# shell
+# Shell
 
-Repositorio para el esqueleto del [TP: shell](https://fisop.github.io/website/tps/shell) del curso Mendez-Fresia de **Sistemas Operativos (7508) - FIUBA**
+## Introduction
+
+This project consists of the development of a command-line Shell designed to interact with the operating system in a Unix-like environment. It was created as a university group assignment by a team of four students, including myself.
+
+The goal was to implement a fully functional user interface that accepts commands, interprets them, and executes the corresponding processes, supporting both built-in and external commands. The system handles argument parsing, process creation, and termination, as well as basic error reporting to ensure smooth and predictable interaction.
+
+A clarification: The project was developed for the University, so all analysis, code, and documentation are written in Spanish.
 
 ## Respuestas teóricas
 
-Utilizar el archivo `shell.md` provisto en el repositorio
+Todas las consignas planteadas a la hora del desarrollo del trabajo práctico se encuentran respondidas en el archivo 'shell.md'.
 
 ## Compilar
 
@@ -55,5 +61,3 @@ PASS 4/26: empty variables are not substituted (env_empty_variable)
 ```bash
 make format
 ```
-
-Para efectivamente subir los cambios producidos por `make format`, hay que hacer `git add .` y `git commit`.
